@@ -1,10 +1,10 @@
 package mx.unam.fes.zacatlan.auth.service;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.JwtException;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.io.Decoders;
-import io.jsonwebtoken.security.Keys;
+    import io.jsonwebtoken.Claims;
+    import io.jsonwebtoken.JwtException;
+    import io.jsonwebtoken.Jwts;
+    import io.jsonwebtoken.io.Decoders;
+    import io.jsonwebtoken.security.Keys;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -20,6 +20,7 @@ public class JwtService {
 
     public JwtService(@Value("${app.jwt.secret}") String secret,
                       @Value("${app.jwt.expiration-minutes}") long expirationMinutes) {
+
         this.signingKey = Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
         this.expirationMinutes = expirationMinutes;
     }
